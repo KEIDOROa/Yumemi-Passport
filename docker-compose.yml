@@ -1,0 +1,14 @@
+version: '3'
+services:
+  yumemi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./react:/app
+      - /app/node_modules
+    working_dir: /app
+    command: npm start
